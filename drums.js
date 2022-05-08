@@ -1,8 +1,26 @@
+document.addEventListener("DOMContentLoaded", init);
+
+function init(){
+//  alert("added");
+//    alert("added");
+    var div = document.getElementById('sequence');
+  var divs = div.getElementsByTagName('div');
+    for (var i = 0; i < divs.length; i += 1) {
+      divs[i].onclick = function(){
+        if(this.classList.contains('enabled-step')){
+          this.classList.remove("enabled-step");
+        } else {
+          this.classList.add("enabled-step");
+        }
+      };
+    }
+
+};
+
 var currentStep = 0;
 function nextStep(){
   var div = document.getElementById('sequence');
   var divs = div.getElementsByTagName('div');
-  var divArray = [];
   for (var i = 0; i < divs.length; i += 1) {
     if(i == currentStep) {
       divs[i].classList.remove("active-step");
@@ -31,7 +49,7 @@ function start() {
   timer = setInterval(function() {
     playStep();
     nextStep();
-  }, 1000);
+  }, 500);
 }
 
 function stop() {

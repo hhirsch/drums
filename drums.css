@@ -15,3 +15,7 @@
 .active-step {
     background-color: green;
 }
+
+.enabled-step {
+    font-weight: bold;
+}
