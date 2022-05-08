@@ -33,6 +33,7 @@ function nextStep(){
 }
 
 function playStep(){
+  var audio = new Audio('beep.wav');
   var div = document.getElementById('sequence');
   var divs = div.getElementsByTagName('div');
   if(divs[currentStep].classList.contains('enabled-step')){
@@ -41,14 +42,13 @@ function playStep(){
 }
 
 var timer;
-var audio = new Audio('beep.wav');
 function start() {
   document.getElementById("start_button").disabled = true;
   document.getElementById("stop_button").disabled = false;
   timer = setInterval(function() {
     playStep();
     nextStep();
-  }, 500);
+  }, 100);
 }
 
 function stop() {
