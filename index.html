@@ -18,6 +18,7 @@
     <button id="stop_button" disabled="true" onclick="stop()">
         Stop
 </button>
+  Volume: <input id="volume" type="range" min="0" max="1" step="0.01" value="0.5" oninput="FilterSample.changeFrequency(this);">
 
 <div id="sequence" class="grid-container">
   <div class="grid-item active-step">1</div>

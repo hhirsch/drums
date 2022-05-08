@@ -34,6 +34,7 @@ function nextStep(){
 
 function playStep(){
   var audio = new Audio('beep.wav');
+  audio.volume = document.getElementById('volume').value;
   var div = document.getElementById('sequence');
   var divs = div.getElementsByTagName('div');
   if(divs[currentStep].classList.contains('enabled-step')){
