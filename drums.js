@@ -48,10 +48,11 @@ function playStep(element, audio){
   if(divs[currentStep[element]].classList.contains('enabled-step')){
     audio.play();
   };
+  delete(audio);
 }
 
 var timer;
-function start() {
+function start(speed) {
   document.getElementById("start_button").disabled = true;
   document.getElementById("stop_button").disabled = false;
   timer = setInterval(function() {
@@ -63,7 +64,7 @@ function start() {
     nextStep('sequence-1');
     nextStep('sequence-2');
     nextStep('sequence-3');
-  }, 100);
+  }, speed);
 }
 
 function stop() {
