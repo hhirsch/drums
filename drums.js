@@ -40,12 +40,12 @@ function nextStep(element){
   }
 }
 
-function playStep(element, audio){
+function playStep(step, element, audio){
   var audio = new Audio(audio);
   audio.volume = document.getElementById('volume').value;
   var div = document.getElementById(element);
   var divs = div.getElementsByTagName('div');
-  if(divs[currentStep[element]].classList.contains('enabled-step')){
+  if(divs[step[element]].classList.contains('enabled-step')){
     audio.play();
   };
   delete(audio);
@@ -56,10 +56,21 @@ function start(speed) {
   document.getElementById("start_button").disabled = true;
   document.getElementById("stop_button").disabled = false;
   timer = setInterval(function() {
-    playStep('sequence', 'beep.wav');
-    playStep('sequence-1', 'kick.wav');
-    playStep('sequence-2', 'snare.wav');
-    playStep('sequence-3', 'hat.wav');
+    setTimeout(function(){
+      playStep(currentStep, 'sequence', 'beep.wav');
+    },0);
+    setTimeout(function(){
+      playStep(currentStep, 'sequence-1', 'kick.wav');
+    },0);
+    setTimeout(function(){
+      playStep(currentStep, 'sequence-2', 'snare.wav');
+    },0);
+    setTimeout(function(){
+      playStep(currentStep, 'sequence-3', 'hat.wav');
+    },0);
+
+
+
     nextStep('sequence');
     nextStep('sequence-1');
     nextStep('sequence-2');
