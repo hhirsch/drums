@@ -58,23 +58,20 @@ function start(speed) {
   timer = setInterval(function() {
     setTimeout(function(){
       playStep(currentStep, 'sequence', 'beep.wav');
+      nextStep('sequence');
     },0);
     setTimeout(function(){
       playStep(currentStep, 'sequence-1', 'kick.wav');
+      nextStep('sequence-1');
     },0);
     setTimeout(function(){
       playStep(currentStep, 'sequence-2', 'snare.wav');
+      nextStep('sequence-2');
     },0);
     setTimeout(function(){
       playStep(currentStep, 'sequence-3', 'hat.wav');
+      nextStep('sequence-3');
     },0);
-
-
-
-    nextStep('sequence');
-    nextStep('sequence-1');
-    nextStep('sequence-2');
-    nextStep('sequence-3');
   }, speed);
 }
 
